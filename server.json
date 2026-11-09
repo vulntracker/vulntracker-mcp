@@ -1,0 +1,34 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-10-17/server.schema.json",
+  "name": "io.vulntracker/mcp",
+  "title": "VulnTracker",
+  "description": "CVEs, affected versions and fix versions for your dependencies, from an affected-version ledger.",
+  "version": "2.5.0",
+  "websiteUrl": "https://vulntracker.io",
+  "repository": {
+    "url": "https://github.com/vulntracker/vulntracker-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.vulntracker.io/mcp",
+      "headers": [
+        {
+          "name": "Authorization",
+          "description": "VulnTracker API key as a bearer token. Create one at https://vulntracker.io/settings/api-keys (free account: 30 read-only calls a day).",
+          "isRequired": true,
+          "isSecret": true,
+          "value": "Bearer {api_key}",
+          "variables": {
+            "api_key": {
+              "description": "API key starting with vt_",
+              "isRequired": true,
+              "isSecret": true
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
